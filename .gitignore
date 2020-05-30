@@ -1,0 +1,19 @@
+!.gitignore
+
+# for docker
+/docker/files/mysql/db/*
+!/docker/files/mysql/db/.gitkeep
+
+# for src/base
+/src/base/.gitignore
+!/src/base/.env
+/src/base/storage/framework/sessions/*
+!/src/base/storage/framework/sessions/.gitkeep
+/src/base/static_hash
+
+# for backup files and log
+*.log
+*.bak
+
+/admin/desgin
+/admin/lumen.drawio
