@@ -7,14 +7,14 @@ networks:
             - subnet: 172.30.0.0/24
 services:
     cake_db:
-        build: ./files/mysql
+        build: ../docker/files/mysql
         networks:
             base:
                 ipv4_address: '172.30.0.10'
         ports:
             - "3306:3306"
         volumes:
-            - ./files/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+            - ../docker/files/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
         user: mysql
         # user: "1000:50"
         environment:
@@ -23,7 +23,7 @@ services:
             MYSQL_PASSWORD: base123
             MYSQL_ROOT_PASSWORD: root
     cake_web:
-        build: ./files/web
+        build: ../docker/files/web
         depends_on:
             - cake_db
         networks:
