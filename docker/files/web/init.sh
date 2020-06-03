@@ -1,9 +1,13 @@
 #!/bin/bash
 cd `dirname $0`
 
+if [ ! -e /var/www/html/cake/vendor ]; then
+    cd /var/www/html/cake
+    composer install
+fi
+
 echo "cd /var/www/html/cake/bin"
 cd /var/www/html/cake/bin
-
 # echo "execute composer dump-autoload"
 # composer dump-autoload
 
