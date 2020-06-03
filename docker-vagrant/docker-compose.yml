@@ -34,6 +34,9 @@ services:
         volumes:
             - ..:/var/shared
             - ../src:/var/www/html
+            - ../src/local-vagrant/composer.json:/var/www/html/cake/composer.json
+            - ../src/local-vagrant/composer.lock:/var/www/html/cake/composer.lock
+            - ../src/local-vagrant/src/Application.php:/var/www/html/cake/src/Application.php
             - ../src/local-vagrant/config/.env:/var/www/html/cake/config/.env
             - ../src/local-vagrant/config/app.php:/var/www/html/cake/config/app.php
             - ../src/local-vagrant/config/bootstrap.php:/var/www/html/cake/config/bootstrap.php
