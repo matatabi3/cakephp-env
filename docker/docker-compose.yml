@@ -34,8 +34,8 @@ services:
         volumes:
             - ..:/var/shared
             - ../src:/var/www/html
-            - ../src/local/conposer.json:/var/www/html/cake/conposer.json
-            - ../src/local/conposer.lock:/var/www/html/cake/conposer.lock
+            - ../src/local/composer.json:/var/www/html/cake/composer.json
+            - ../src/local/composer.lock:/var/www/html/cake/composer.lock
             - ../src/local/config/.env:/var/www/html/cake/config/.env
             - ../src/local/config/app.php:/var/www/html/cake/config/app.php
             - ../src/local/config/bootstrap.php:/var/www/html/cake/config/bootstrap.php
