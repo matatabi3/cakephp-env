@@ -6,14 +6,12 @@ if [ ! -e /var/www/html/cake/vendor ]; then
     composer install
 fi
 
-echo "cd /var/www/html/cake/bin"
-cd /var/www/html/cake/bin
-# echo "execute composer dump-autoload"
-# composer dump-autoload
-
 echo "wait for cake_db start up..."
 echo "dockerize -timeout 20s -wait tcp://cake_db:3306"
 dockerize -timeout 20s -wait tcp://cake_db:3306
+
+echo "cd /var/www/html/cake/bin"
+cd /var/www/html/cake/bin
 
 echo "execute 'php cake.php migrations migrate"
 php cake.php migrations migrate
